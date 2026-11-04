@@ -1,0 +1,28 @@
+[project]
+name = "leaderboard-hld"
+version = "0.1.0"
+description = "Real-time leaderboard service with FastAPI, Redis sorted sets, and PostgreSQL"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.115.0",
+    "pydantic==2.10.0",
+    "sqlalchemy==2.0.36",
+    "redis==5.0.1",
+    "psycopg2-binary==2.9.9",
+    "uvicorn==0.32.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest==8.3.0",
+    "pytest-asyncio==0.24.0",
+    "httpx==0.27.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
